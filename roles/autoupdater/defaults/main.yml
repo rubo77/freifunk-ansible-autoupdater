@@ -1,0 +1,3 @@
+---
+gluon_file_base: http://1.updates.services.ffki/firmware/release-candidate/sysupgrade/gluon-ffki-2016.2.1-
+gluon_file_end: -sysupgrade.bin

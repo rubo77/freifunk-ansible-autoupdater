@@ -1,0 +1,4 @@
+[router]
+drakar ansible_host=fda1:384a:74de:4242:b248:7aff:fec3:8706 ansible_user=root
+# if you don't have an ssh-key, use:
+# ansible_ssh_pass=xxxx

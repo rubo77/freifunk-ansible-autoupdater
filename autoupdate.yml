@@ -1,0 +1,5 @@
+---
+- hosts: router
+  roles:
+    - {role: autoupdater, tags: ["autoupdater"]}
+  gather_facts: no

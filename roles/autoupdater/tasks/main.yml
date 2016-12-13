@@ -1,0 +1,14 @@
+---
+- name: check if router model {{router_model}}
+  raw: "[ {{router_model}} == $(lua -e 'print(require(\"platform_info\").get_image_name())') ]"
+  register: model_ok
+
+- name: prnt path
+  raw: echo {{gluon_file_base}}{{router_model}}{{gluon_file_end}}
+  when: model_ok
+
+- name: download file from server
+  raw: "wget -q {{gluon_file_base}}{{router_model}}{{gluon_file_end}} -O /tmp/gluon{{gluon_file_end}}"
+  
+- name: flash router
+  raw: sysupgrade /tmp/gluon{{gluon_file_end}}
